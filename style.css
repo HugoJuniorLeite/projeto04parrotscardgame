@@ -1,0 +1,29 @@
+html{
+
+    --background:#EEF9BF;
+    font-size: 62.5%;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+}
+
+main{
+    background-color: var(--background);
+    width: 100%;
+    height: 100%;
+}
+
+
+li{
+    background-color: blueviolet;
+    width: 117px;
+    height: 146px;
+    margin-right: 5rem;
+
+}
+
+ul{
+    display: flex;
+}
