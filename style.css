@@ -16,6 +16,8 @@ html {
     /* color border*/
     --border: #99CEA8;
 
+    /* fonte padrão*/
+    font-family: 'Roboto';
     /*parametro de conversão pra rem*/
     font-size: 62.5%;
 }
@@ -23,8 +25,7 @@ html {
 body {
     max-width: 111rem;
     max-height: 62.9rem;
-    display: flex;
-    flex-wrap: wrap;
+    
 }
 
 main {
@@ -47,13 +48,14 @@ section {
 
 h1 {
 
-    font-family: 'Roboto';
+
     color: var(--color--h1);
     font-weight: 700;
     font-size: 5.6rem;
     line-height: 6.6rem;
     letter-spacing: -0.004em;
     padding: 4rem 0 4.7rem 0;
+    text-align: center;
 
 }
 
@@ -61,6 +63,7 @@ h1 {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 
 
 }
@@ -112,7 +115,37 @@ h1 {
 }
 
 
-@media screen and (max-width: 366px) {
+
+/*teste */
+
+
+.caixa-do-relogio {
+
+    padding: 2rem;
+    border-radius: 0.5rem;
+    margin: 2rem auto;
+    text-align: center;
+  }
+  
+  .cronometro {
+    
+    color: var(--color--h1);
+    font-size: 4em;
+    font-weight: bold;
+  }
+  
+  .text {
+
+    color: var(--color--h1);
+    font-weight: bold;
+    font-size: 1em;
+  }
+  
+
+/*teste*/
+
+
+@media screen and (max-width: 600px) {
 
     body,
     main {
@@ -133,8 +166,13 @@ h1 {
         padding-right: 10.9rem;
     }
 
+    .image{
+        width: 100%;
+        height: 100%;
+    }
+
     h1 {
-        font-size: 3.6rem;
+        font-size: 4.6rem;
         line-height: 4.2rem;
         padding-left: 1.2rem;
         padding-right: 1.1rem;
@@ -142,47 +180,10 @@ h1 {
 }
 
 
+@media screen and (max-width: 366px) {
 
 
-/*
-.face .card-back {
-     /*backface-visibility: hidden;
-    
-    
-    transform: rotateY(0deg);       
- 
-    
-    
-}
-
-.card-back{
-    transform: rotateY(180deg);
-    backface-visibility: hidden
-
-}
-
-
-.card-front{
-    transform: rotateY(-180deg);
-}
-
-
-/*
-.card-front{
-    
-    position: relative;
-    top: 0;
-    left: 0;
-    
-
-}
-
- .front{
-
-   transform: rotatey(-180deg);
-   backface-visibility: hidden;
-
-
-
+    h1 {
+        font-size: 3.6rem;
     }
-*/
+}

@@ -14,6 +14,7 @@ function embaralhar() {
 
 function criarCartas(){
 
+
     for(let i =0; i < cards.length; i++){
 
     baralho.innerHTML += `
@@ -21,15 +22,11 @@ function criarCartas(){
     <li id="${cards[i]}" onclick= "selecionarCarta(this)" class="face front"> <img class="image"src="../images/${cards[i]}.gif" alt=""/>  </li>
     <li id="${cards[i]}" onclick= "selecionarCarta(this)" class="face back"> <img class="image" src="./images/back.png" alt=""/>  </li>
     </div>
-
     `;
 
-   //cards.push({card:i}, {personagem: `${i}.gif`});
 }
-
  
 }
-
 
 function inicio(){
 
@@ -37,7 +34,7 @@ while(escolhaDeCartas < 4 || escolhaDeCartas > 15 || escolhaDeCartas% 2 !==0){
         escolhaDeCartas=Number(prompt("Escolha a quantidade de cartas...O numero deve ser par, maior que 4 e menor que 15"));
         
     }
-    
+    iniciar()
  for(let i =0; i < escolhaDeCartas/2; i++){
     let card =personagem[i]
     cards.push(card)
@@ -48,11 +45,6 @@ cards.sort(embaralhar) /*para embaralhar as cartas */
 console.log(cards)
 criarCartas()
 }
-console.log (cards)
-
-
-
-
 
 function verificarCards(){
 let firts = primeiro.id
@@ -86,6 +78,7 @@ if( acerto === escolhaDeCartas/2 ){
 }
 
 function wins(){
+    clearInterval(codInterval);
     const totalJogadas = acerto + erro
    alert(`Você ganhou em ${totalJogadas} jogadas!`)
 }
@@ -108,11 +101,24 @@ else if(segundo===""){
     verificarCards()
 }
 }
- 
+
+
+let contador = 0;
+let codInterval;
+
+function iniciar() {
+  contador = 0;
+
+  // agendar uma função para ser executada a cada 1 segundo
+  codInterval = setInterval(decrementar, 1000);
+}
+
+function decrementar() {
+  const divContador = document.querySelector(".cronometro");
+  divContador.innerHTML = contador;
+
+  contador++;
+
+} 
     inicio()
    
- // Após esta linha, a minhaArray estará embaralhada
-
-// Esta função pode ficar separada do código acima, onde você preferir
-
-//console.log(cards)
