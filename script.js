@@ -1,3 +1,5 @@
+
+//variaveis globais
 let escolhaDeCartas;
 let baralho=document.querySelector('.container');
 const cards =[];
@@ -6,14 +8,14 @@ let segundo ="";
 let acerto=0;
 let erro=0;
 const personagem=['0','1','2','3','4','5','6'];
-
+let contador = 0;
+let codInterval;
 
 function embaralhar() { 
   return Math.random() - 0.5;     
 }
 
 function criarCartas(){
-
 
     for(let i =0; i < cards.length; i++){
 
@@ -23,7 +25,6 @@ function criarCartas(){
     <li id="${cards[i]}" onclick= "selecionarCarta(this)" class="face back"> <img class="image" src="./images/back.png" alt=""/>  </li>
     </div>
     `;
-
 }
  
 }
@@ -46,6 +47,8 @@ console.log(cards)
 criarCartas()
 }
 
+
+//verifica as 1 primeira carta clicada com a 2 carta clicada //
 function verificarCards(){
 let firts = primeiro.id
 let second =segundo.id
@@ -73,16 +76,24 @@ if(firts === second){
 }
 
 if( acerto === escolhaDeCartas/2 ){
- setTimeout( wins,1000)   
+        clearInterval(codInterval);
+    setTimeout( wins,1000)   
 }
 }
 
+//função fim do jogo //
 function wins(){
-    clearInterval(codInterval);
     const totalJogadas = acerto + erro
    alert(`Você ganhou em ${totalJogadas} jogadas! com ${contador} segundos`)
+   let reninciar = prompt('deseja jogar novamene? escreva "sim" ou "não"')
+   if(reninciar == "sim"){
+    window.location.reload();
+   }
+
 }
 
+
+// permite apenas virar duas cartas //
 function selecionarCarta(clicou){
  
     if (clicou.parentNode.classList.contains('select-card')) {
@@ -103,17 +114,16 @@ else if(segundo===""){
 }
 
 
-let contador = 0;
-let codInterval;
-
+// função para o relogio //
 function iniciar() {
   contador = 0;
 
   // agendar uma função para ser executada a cada 1 segundo
-  codInterval = setInterval(decrementar, 1000);
+  codInterval = setInterval(acrescentarTime, 1000);
 }
 
-function decrementar() {
+// função que ascrecenta 1s //
+function acrescentarTime() {
   const divContador = document.querySelector(".cronometro");
   divContador.innerHTML = contador;
   contador++;
