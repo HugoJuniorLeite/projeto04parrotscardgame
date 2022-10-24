@@ -80,7 +80,7 @@ if( acerto === escolhaDeCartas/2 ){
 function wins(){
     clearInterval(codInterval);
     const totalJogadas = acerto + erro
-   alert(`Você ganhou em ${totalJogadas} jogadas!`)
+   alert(`Você ganhou em ${totalJogadas} jogadas! com ${contador} segundos`)
 }
 
 function selecionarCarta(clicou){
@@ -116,7 +116,6 @@ function iniciar() {
 function decrementar() {
   const divContador = document.querySelector(".cronometro");
   divContador.innerHTML = contador;
-
   contador++;
 
 } 

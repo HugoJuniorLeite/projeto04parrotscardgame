@@ -117,25 +117,27 @@ h1 {
 
 
 /*teste */
-
+header{
+    display: flex;
+    justify-content: flex-end;
+    align-self: flex-end;
+    
+}
 
 .caixa-do-relogio {
 
     padding: 2rem;
     border-radius: 0.5rem;
-    margin: 2rem auto;
-    text-align: center;
+    text-align: end;
   }
   
   .cronometro {
-    
     color: var(--color--h1);
     font-size: 4em;
     font-weight: bold;
   }
   
   .text {
-
     color: var(--color--h1);
     font-weight: bold;
     font-size: 1em;
